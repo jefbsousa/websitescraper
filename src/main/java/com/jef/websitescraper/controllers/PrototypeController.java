@@ -1,8 +1,11 @@
 package com.jef.websitescraper.controllers;
 
-import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
@@ -10,13 +13,8 @@ import java.util.Map;
 public class PrototypeController {
 
     @GetMapping("/test")
-    protected  @ResponseBody String test(){
-        return "test";
-    }
-
-    @PostMapping("test-post")
-    protected @ResponseBody String testPost(@RequestBody Map<String, String> mapPost){
-        return mapPost.get("name");
+    protected  @ResponseBody ResponseEntity<String> test(){
+        return new ResponseEntity<>("test-rest" , HttpStatus.OK);
     }
 
 }
