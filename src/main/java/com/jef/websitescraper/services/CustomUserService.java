@@ -12,7 +12,7 @@ import java.util.ArrayList;
 public class CustomUserService implements UserDetailsService {
 
     @Override
-    public UserDetails loadUserByUsername (String username) throws UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException{
         return new User("test", "testpassw", new ArrayList<>());
     }
 }
